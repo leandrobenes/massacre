@@ -1,0 +1,90 @@
+@(username: String)
+
+@main(username) {
+
+
+	<h3>ring</h3>
+	
+	gladiator position: <input id="current-position" type="text"/>
+
+
+
+	<div id="ring">
+	
+		@for( i <- 1 to 10){
+			@for( j <- 1 to 10){
+				<div class="position x_@i y_@j">
+					<input class="x" type="hidden" value="@i">
+					<input class="y" type="hidden" value="@j">
+				</div>	
+			}
+		
+			<div class="separator"></div>
+		}
+	
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+    
+            var WS = window['MozWebSocket'] ? MozWebSocket : WebSocket
+	        var chatSocket = new WS("@routes.Engine.connections(username).webSocketURL(request)")
+            
+            var sendMessage = function(x, y, action) {
+            
+            	try {
+            		
+            		chatSocket.send(JSON.stringify(
+                    	{
+                    	username: '@username',
+                    	x: x,
+                     	y: y,
+                     	action: action}
+                	))
+            	} catch(e) {
+            		console.log("fallo envio");
+            	}
+            	
+            	console.log("pudo transmitir");
+            	
+            }
+            
+			var receiveEvent = function(event) {
+                var data = JSON.parse(event.data)
+                
+                // Handle errors
+                if(data.error) {
+                    chatSocket.close()
+            		alert("error receiving data fron server");
+                    return
+                } else {
+                    console.log("receiving data fron server");
+                    console.log("Type:" + data.type);
+                    console.log("username:" + data.username);
+                    console.log("x:" + data.x);
+                    console.log("y:" + data.y);
+                    
+                    console.log('selector: .x_' + data.x + '.y_' + data.y);
+                    
+                    $('.x_' + data.x + '.y_' + data.y).html(data.username);
+                    
+                }
+            }
+            
+            var handleReturnKey = function(e) {
+                if(e.charCode == 13 || e.keyCode == 13) {
+                    e.preventDefault()
+                    sendMessage()
+                } 
+            }
+            
+            $("#position").keypress(handleReturnKey)  
+            
+            chatSocket.onmessage = receiveEvent
+            
+            $("#ring .position").click(function(e){
+            	sendMessage($(this).find('.x').val(), $(this).find('.y').val(), 'selected');
+			});
+            
+    
+    </script>
+}

@@ -1,0 +1,6 @@
+2013-09-15 14:06:08,131 - [INFO] - from play in main 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-09-15 14:06:15,712 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
