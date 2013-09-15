@@ -1,6 +1,84 @@
-2013-09-15 18:02:24,735 - [INFO] - from play in main 
+2013-09-15 18:19:18,546 - [INFO] - from play in main 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2013-09-15 18:02:40,344 - [INFO] - from play in play-internal-execution-context-1 
+2013-09-15 18:20:05,263 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-09-15 18:21:24,674 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6finem6li - Internal server error, for (GET) [/ring?username=bhbh] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:335) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:335) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:335) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:332) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:332) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:330) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
+	at sbt.PlayReloader$$anon$1.reload(PlayReloader.scala:330) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:106) ~[play_2.10.jar:2.1.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.1.4]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_40]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_40]
+
+2013-09-15 18:21:33,982 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6finemkfn - Internal server error, for (GET) [/ring?username=bhbh] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:335) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:335) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:335) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:332) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:332) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:330) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
+	at sbt.PlayReloader$$anon$1.reload(PlayReloader.scala:330) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:106) ~[play_2.10.jar:2.1.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.1.4]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_40]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_40]
+
+2013-09-15 18:21:35,024 - [ERROR] - from application in New I/O worker #2 
+
+
+! @6finemm3p - Internal server error, for (GET) [/ring?username=bhbh] ->
+
+sbt.PlayExceptions$CompilationException: Compilation error[error: cannot find symbol]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:335) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15$$anonfun$apply$16.apply(PlayReloader.scala:335) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:335) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2$$anonfun$apply$15.apply(PlayReloader.scala:332) ~[na:na]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:332) ~[na:na]
+	at sbt.PlayReloader$$anon$1$$anonfun$reload$2.apply(PlayReloader.scala:330) ~[na:na]
+	at scala.Either$LeftProjection.map(Either.scala:374) ~[na:na]
+	at sbt.PlayReloader$$anon$1.reload(PlayReloader.scala:330) ~[na:na]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:106) ~[play_2.10.jar:2.1.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:104) ~[play_2.10.jar:2.1.4]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24) ~[scala-library.jar:na]
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24) ~[scala-library.jar:na]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:1.7.0_40]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:1.7.0_40]
+	at java.lang.Thread.run(Unknown Source) [na:1.7.0_40]
+
+2013-09-15 18:22:35,546 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-09-15 18:23:30,162 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 

@@ -56,15 +56,29 @@ public class Engine extends Controller {
             	in.onMessage(new Callback<JsonNode>() {
                     public void invoke(JsonNode event) {
                     	
-                    	String previous_x = members.get(username).getX();
-                    	String previous_y = members.get(username).getY();
+                    	System.out.println("client call server");
                     	
-                    	String new_x = event.get("x").asText();
-                    	String new_y = event.get("y").asText();
-                    	String action = event.get("action").asText();
-                        
-                        updateMember(username, new_x, new_y);
-                        notifyMembers(username,previous_x, previous_y, new_x, new_y);
+                    	try {
+						
+                    		String previous_x = members.get(username).getX();
+                        	String previous_y = members.get(username).getY();
+                        	String new_x = event.get("x").asText();
+                        	String new_y = event.get("y").asText();
+                        	String action = event.get("action").asText();
+                        	
+                        	System.out.println("username:" + username);
+                        	System.out.println("new_x:" + new_x);
+                        	System.out.println("new_y:" + new_y);
+                            
+                            updateMember(username, new_x, new_y);
+                            notifyMembers(username,previous_x, previous_y, new_x, new_y);
+                    		
+						} catch (Exception e) {
+							System.out.println("fallo obtener algun valor");
+							e.printStackTrace();
+						}
+                    	
+
                     } 
                  });
             	
@@ -103,9 +117,7 @@ public class Engine extends Controller {
     public static void notifyMembers(String username, String previous_x, String previous_y, String x, String y) {
     	
     	ServerResponse serverResponse = new ServerResponse(ServerResponseType.UPDATE_SOME, username, previous_x, previous_y , x, y);
-    	
     	System.out.println("notify members");
-    	
     	System.out.println(Json.toJson(serverResponse));
     	
     	

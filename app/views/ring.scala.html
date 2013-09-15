@@ -29,18 +29,13 @@
             
             var sendMessage = function(x, y, action) {
             
-            	try {
-            		
-            		chatSocket.send(JSON.stringify(
-                    	{
-                    	username: '@username',
-                    	x: x,
-                     	y: y,
-                     	action: action}
-                	))
-            	} catch(e) {
-            		console.log("fallo envio");
-            	}
+        		chatSocket.send(JSON.stringify(
+                	{
+                	username: '@username',
+                	x: x,
+                 	y: y,
+                 	action: action}
+            	))
             	
             	console.log("pudo transmitir");
             	
@@ -55,15 +50,13 @@
             		alert("error receiving data fron server");
                     return
                 } else {
-                    console.log("receiving data fron server");
-                    console.log("Type:" + data.type);
-                    console.log("username:" + data.username);
-                    console.log("x:" + data.x);
-                    console.log("y:" + data.y);
-
-                    console.log('selector: .x_' + data.x + '.y_' + data.y);
-                    
-                    console.log('data.previous_x:' + data.previous_x);
+                    //console.log("receiving data fron server");
+                    //console.log("Type:" + data.type);
+                    //console.log("username:" + data.username);
+                    //console.log("x:" + data.x);
+                    //console.log("y:" + data.y);
+                    //console.log('selector: .x_' + data.x + '.y_' + data.y);
+                    //console.log('data.previous_x:' + data.previous_x);
                     
                     if(data.previous_x != null && data.previous_y != null) {
                     
