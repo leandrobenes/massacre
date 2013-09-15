@@ -7,8 +7,6 @@
 	
 	gladiator position: <input id="current-position" type="text"/>
 
-
-
 	<div id="ring">
 	
 		@for( i <- 1 to 10){
@@ -62,9 +60,19 @@
                     console.log("username:" + data.username);
                     console.log("x:" + data.x);
                     console.log("y:" + data.y);
-                    
+
                     console.log('selector: .x_' + data.x + '.y_' + data.y);
                     
+                    console.log('data.previous_x:' + data.previous_x);
+                    
+                    if(data.previous_x != null && data.previous_y != null) {
+                    
+                    	console.log('.x_' + data.previous_x + '.y_' + data.previous_y);
+                    	// Clean previous position
+                    	$('.x_' + data.previous_x + '.y_' + data.previous_y).html("");
+                    }
+
+					// Mark new position                    
                     $('.x_' + data.x + '.y_' + data.y).html(data.username);
                     
                 }
@@ -84,7 +92,14 @@
             $("#ring .position").click(function(e){
             	sendMessage($(this).find('.x').val(), $(this).find('.y').val(), 'selected');
 			});
-            
+			
+			
+			$(document).keydown(function(e){
+			    if (e.keyCode == 37) { 
+			       alert( "left pressed" );
+			       return false;
+			    }
+			});
     
     </script>
 }

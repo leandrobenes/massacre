@@ -56,13 +56,15 @@ public class Engine extends Controller {
             	in.onMessage(new Callback<JsonNode>() {
                     public void invoke(JsonNode event) {
                     	
-                    	System.out.println("username:" + event.get("username").asText());
-                        System.out.println("x:" + event.get("x").asText());
-                        System.out.println("y:" + event.get("y").asText());
-                        System.out.println("action:" + event.get("action").asText());
+                    	String previous_x = members.get(username).getX();
+                    	String previous_y = members.get(username).getY();
+                    	
+                    	String new_x = event.get("x").asText();
+                    	String new_y = event.get("y").asText();
+                    	String action = event.get("action").asText();
                         
-                        updateMember(event.get("username").asText(), event.get("x").asText(), event.get("y").asText());
-                        notifyMembers(event.get("username").asText(), event.get("x").asText(), event.get("y").asText());
+                        updateMember(username, new_x, new_y);
+                        notifyMembers(username,previous_x, previous_y, new_x, new_y);
                     } 
                  });
             	
@@ -95,14 +97,17 @@ public class Engine extends Controller {
     public static void updateMember(String username, String x, String y) {
     	Member member = members.get(username);
     	member.setX(x);
-    	member.setY(x);
+    	member.setY(y);
     }
     
-    public static void notifyMembers(String username, String x, String y) {
+    public static void notifyMembers(String username, String previous_x, String previous_y, String x, String y) {
     	
-    	ServerResponse serverResponse = new ServerResponse(ServerResponseType.UPDATE, username, x, y);
+    	ServerResponse serverResponse = new ServerResponse(ServerResponseType.UPDATE_SOME, username, previous_x, previous_y , x, y);
     	
     	System.out.println("notify members");
+    	
+    	System.out.println(Json.toJson(serverResponse));
+    	
     	
     	for(String key : members.keySet()) {
     		Member member = members.get(key);
