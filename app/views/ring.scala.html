@@ -9,11 +9,12 @@
 
 	<div id="ring">
 	
-		@for( i <- 1 to 10){
-			@for( j <- 1 to 10){
+		@for( i <- 1 to 15){
+			@for( j <- 1 to 15){
 				<div class="position x_@i y_@j">
 					<input class="x" type="hidden" value="@i">
 					<input class="y" type="hidden" value="@j">
+					<span class="text"></span>
 				</div>	
 			}
 		
@@ -62,36 +63,55 @@
                     
                     	console.log('.x_' + data.previous_x + '.y_' + data.previous_y);
                     	// Clean previous position
-                    	$('.x_' + data.previous_x + '.y_' + data.previous_y).html("");
+                    	$('.x_' + data.previous_x + '.y_' + data.previous_y).removeClass('selected');
+                    	$('.x_' + data.previous_x + '.y_' + data.previous_y).find('.text').html("");
                     }
 
-					// Mark new position                    
-                    $('.x_' + data.x + '.y_' + data.y).html(data.username);
+					// Mark new position
+					$('.x_' + data.x + '.y_' + data.y).addClass('selected');                    
+                    $('.x_' + data.x + '.y_' + data.y).find('.text').html(data.username);
                     
                 }
             }
             
-            var handleReturnKey = function(e) {
-                if(e.charCode == 13 || e.keyCode == 13) {
-                    e.preventDefault()
-                    sendMessage()
-                } 
-            }
             
-            $("#position").keypress(handleReturnKey)  
-            
-            chatSocket.onmessage = receiveEvent
+            chatSocket.onmessage = receiveEvent;
             
             $("#ring .position").click(function(e){
-            	sendMessage($(this).find('.x').val(), $(this).find('.y').val(), 'selected');
+            
+            	var x = $(this).find('.x').val();
+            	var y = $(this).find('.y').val();
+            
+            	sendMessage(x, y, 'selected');
 			});
 			
 			
 			$(document).keydown(function(e){
-			    if (e.keyCode == 37) { 
-			       alert( "left pressed" );
+			     
+					var x = $('.selected').find('.x').val();
+					var y = $('.selected').find('.y').val()
+					
+					// left
+					if (e.keyCode == 37) {
+						sendMessage(x, +y - 1, 'selected');
+					}
+					
+					// up
+					if (e.keyCode == 38) {
+						sendMessage(+x - 1, y, 'selected');
+					}
+					
+					// right
+					if (e.keyCode == 39) {
+						sendMessage(x, +y + 1, 'selected');
+					}
+					
+					// down
+					if (e.keyCode == 40) {
+						sendMessage(+x + 1, y, 'selected');
+					}
 			       return false;
-			    }
+			    
 			});
     
     </script>

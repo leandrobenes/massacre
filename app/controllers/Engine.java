@@ -56,7 +56,8 @@ public class Engine extends Controller {
             	in.onMessage(new Callback<JsonNode>() {
                     public void invoke(JsonNode event) {
                     	
-                    	System.out.println("client call server");
+//                    	System.out.println("client call server");
+                    	System.out.println("values obtained: " + event.toString());
                     	
                     	try {
 						
@@ -66,9 +67,9 @@ public class Engine extends Controller {
                         	String new_y = event.get("y").asText();
                         	String action = event.get("action").asText();
                         	
-                        	System.out.println("username:" + username);
-                        	System.out.println("new_x:" + new_x);
-                        	System.out.println("new_y:" + new_y);
+//                        	System.out.println("username:" + username);
+//                        	System.out.println("new_x:" + new_x);
+//                        	System.out.println("new_y:" + new_y);
                             
                             updateMember(username, new_x, new_y);
                             notifyMembers(username,previous_x, previous_y, new_x, new_y);
