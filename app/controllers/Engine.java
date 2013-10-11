@@ -25,7 +25,6 @@ import dto.ServerResponseType;
 
 public class Engine extends Controller {
 	
-	
 	static Map<String, Member> members = new HashMap<>();
 	
     /**
@@ -121,8 +120,6 @@ public class Engine extends Controller {
 							System.out.println("fallo obtener algun valor");
 							e.printStackTrace();
 						}
-                    	
-
                     } 
                  });
             	
@@ -173,7 +170,6 @@ public class Engine extends Controller {
     		Member member = members.get(key);
     		member.getOut().write(Json.toJson(serverResponse));
     	}
-    	
     }
     
     public static Result members() {
