@@ -2,7 +2,6 @@
 
 @main(username) {
 
-
 	<h3>ring</h3>
 	
 	gladiator position: <input id="current-position" type="text"/>
@@ -58,22 +57,26 @@
                     //console.log("y:" + data.y);
                     //console.log('selector: .x_' + data.x + '.y_' + data.y);
                     //console.log('data.previous_x:' + data.previous_x);
+                    console.log('resultType:' + data.resultType);
                     
                     if(data.previous_x != null && data.previous_y != null) {
                     
                     	console.log('.x_' + data.previous_x + '.y_' + data.previous_y);
                     	// Clean previous position
-                    	$('.x_' + data.previous_x + '.y_' + data.previous_y).removeClass('selected');
+                    	$('.x_' + data.previous_x + '.y_' + data.previous_y).removeClass('selected').removeClass(data.username);
                     	$('.x_' + data.previous_x + '.y_' + data.previous_y).find('.text').html("");
                     }
 
 					// Mark new position
-					$('.x_' + data.x + '.y_' + data.y).addClass('selected');                    
+					$('.x_' + data.x + '.y_' + data.y).addClass('selected').addClass(data.username);
                     $('.x_' + data.x + '.y_' + data.y).find('.text').html(data.username);
                     
+                    // If operation success lets move view to selection
+                	$('html, body').animate({
+				        scrollTop: $('.x_' + data.x + '.y_' + data.y).offset().top - 200
+				    }, 0);
                 }
             }
-            
             
             chatSocket.onmessage = receiveEvent;
             
@@ -88,8 +91,8 @@
 			
 			$(document).keydown(function(e){
 			     
-					var x = $('.selected').find('.x').val();
-					var y = $('.selected').find('.y').val()
+					var x = $('.selected.@request().getQueryString("username")').find('.x').val();
+					var y = $('.selected.@request().getQueryString("username")').find('.y').val()
 					
 					// left
 					if (e.keyCode == 37) {
@@ -110,6 +113,7 @@
 					if (e.keyCode == 40) {
 						sendMessage(+x + 1, y, 'selected');
 					}
+					
 			       return false;
 			    
 			});

@@ -19,6 +19,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.WebSocket;
 import views.html.ring;
+import dto.ResultType;
 import dto.ServerResponse;
 import dto.ServerResponseType;
 
@@ -49,12 +50,22 @@ public class Engine extends Controller {
             public void onReady(WebSocket.In<JsonNode> in, WebSocket.Out<JsonNode> out){
             	
             	addMember(username, out);
-                
+            	
+            	// #############################################
+            	// Give new user info about game at this moment
+            	// #############################################
+            	for(String key : members.keySet()) {
+            		Member member = members.get(key);
+            		notifyMember(username, member.getUserName(), member.getX(), member.getY());
+            	}
+            	
             	// ########################################
             	// Bind IN connection events
             	// ########################################
             	in.onMessage(new Callback<JsonNode>() {
                     public void invoke(JsonNode event) {
+                    	
+                    	boolean operationSuccess = true;
                     	
 //                    	System.out.println("client call server");
                     	System.out.println("values obtained: " + event.toString());
@@ -67,12 +78,44 @@ public class Engine extends Controller {
                         	String new_y = event.get("y").asText();
                         	String action = event.get("action").asText();
                         	
-//                        	System.out.println("username:" + username);
-//                        	System.out.println("new_x:" + new_x);
-//                        	System.out.println("new_y:" + new_y);
-                            
+                        	// Check boundaries
+                        	if(Integer.valueOf(new_x) <= 0 || Integer.valueOf(new_x) >= 16) {
+                        		new_x = previous_x;
+                        		operationSuccess = false;
+                        	}
+                        	if(Integer.valueOf(new_y) <= 0 || Integer.valueOf(new_y) >= 16) {
+                        		new_y = previous_y;
+                        		operationSuccess = false;
+                        	}
+                        	
+                        	// Check another member collisions
+                        	
+                        	boolean isSamePosition = false;
+                        	
+                        	for(String key : members.keySet()) {
+                        		Member member = members.get(key);
+                        		if(new_x.equals(member.getX()) && new_y.equals(member.getY())) {
+                        			isSamePosition = true;
+                        			break;
+                        		}
+                        	}
+                        	
+                        	if(isSamePosition) {
+                        		new_x = previous_x;
+                        		new_y = previous_y;
+                        		operationSuccess = false;
+                        	}
+                        	
+                        	ResultType resultType = null;
+                        	
+                        	if(operationSuccess) {
+                        		resultType = ResultType.SUCCESS;
+                        	} else{
+                        		resultType = ResultType.FAIL;
+                        	}
+                        	
                             updateMember(username, new_x, new_y);
-                            notifyMembers(username,previous_x, previous_y, new_x, new_y);
+                            notifyMembers(username,previous_x, previous_y, new_x, new_y, resultType);
                     		
 						} catch (Exception e) {
 							System.out.println("fallo obtener algun valor");
@@ -97,7 +140,6 @@ public class Engine extends Controller {
                 ObjectNode response = Json.newObject();
                 response.put("message", "Connected...");
             	out.write(response);
-            
             }
         };
     }
@@ -115,12 +157,17 @@ public class Engine extends Controller {
     	member.setY(y);
     }
     
-    public static void notifyMembers(String username, String previous_x, String previous_y, String x, String y) {
+    public static void notifyMember(String usernameToNotify, String username, String x, String y) {
+    	ServerResponse serverResponse = new ServerResponse(ServerResponseType.UPDATE_SOME, username, null, null , x, y, null);
+    	Member member = members.get(usernameToNotify);
+    	member.getOut().write(Json.toJson(serverResponse));
+    }
+    
+    public static void notifyMembers(String username, String previous_x, String previous_y, String x, String y, ResultType resultType) {
     	
-    	ServerResponse serverResponse = new ServerResponse(ServerResponseType.UPDATE_SOME, username, previous_x, previous_y , x, y);
+    	ServerResponse serverResponse = new ServerResponse(ServerResponseType.UPDATE_SOME, username, previous_x, previous_y , x, y, resultType);
     	System.out.println("notify members");
     	System.out.println(Json.toJson(serverResponse));
-    	
     	
     	for(String key : members.keySet()) {
     		Member member = members.get(key);

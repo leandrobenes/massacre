@@ -1,144 +1,165 @@
-2013-09-21 00:44:52,259 - [INFO] - from play in main 
+2013-10-11 00:51:39,002 - [INFO] - from play in main 
 Listening for HTTP on /0:0:0:0:0:0:0:0:9000
 
-2013-09-21 00:45:00,375 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 00:51:47,289 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 00:47:09,927 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 00:56:21,641 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 00:47:12,104 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 00:56:23,758 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 00:47:56,725 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 00:58:52,507 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 00:47:59,004 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 00:58:54,660 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 00:48:34,674 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:00:55,954 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 00:48:36,731 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:00:58,095 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 00:49:10,548 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:01:38,169 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 00:49:12,696 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:01:40,315 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 00:52:42,430 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:02:12,380 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 00:52:44,615 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:02:14,365 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 00:53:44,243 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:02:21,545 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 00:53:46,441 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:02:23,651 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 00:54:16,292 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:09:35,474 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 00:54:18,541 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:10:08,370 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 00:56:53,110 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:10:47,037 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 00:56:55,102 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:12:02,281 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 00:58:53,303 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:13:41,140 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 00:58:55,332 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:27:31,035 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 00:59:13,631 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:27:33,261 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 00:59:15,586 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:28:08,629 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:02:18,212 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:28:10,532 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 01:02:20,269 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:29:38,758 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 01:03:32,788 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:29:40,626 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:03:34,844 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:30:25,406 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:04:23,776 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:30:27,558 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:04:25,751 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:34:28,525 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:04:41,601 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:34:30,335 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 01:04:43,543 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:35:49,662 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:05:00,299 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:35:51,981 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:05:02,263 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:36:06,414 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:05:17,618 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:36:08,408 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 01:05:19,564 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:36:41,342 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:05:35,048 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:36:43,191 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:05:37,371 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:38:55,210 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:08:50,313 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:38:57,258 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:08:52,258 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:39:16,872 - [INFO] - from play in play-internal-execution-context-2 
 Application started (Dev)
 
-2013-09-21 01:09:11,503 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:39:18,704 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 01:09:13,511 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:39:36,969 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 01:09:29,793 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:39:38,873 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 01:09:31,706 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:39:55,351 - [INFO] - from play in play-internal-execution-context-3 
 Application started (Dev)
 
-2013-09-21 01:12:36,438 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:39:57,395 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 01:12:38,629 - [INFO] - from play in play-internal-execution-context-3 
+2013-10-11 01:40:11,202 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:13:29,656 - [INFO] - from play in play-internal-execution-context-1 
+2013-10-11 01:40:13,061 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:13:31,647 - [INFO] - from play in play-internal-execution-context-4 
+2013-10-11 01:41:30,929 - [INFO] - from play in play-internal-execution-context-1 
 Application started (Dev)
 
-2013-09-21 01:13:44,569 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:41:32,822 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 
-2013-09-21 01:13:46,513 - [INFO] - from play in play-internal-execution-context-2 
+2013-10-11 01:42:36,200 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2013-10-11 01:42:38,087 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-11 01:43:28,682 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-10-11 01:43:30,535 - [INFO] - from play in play-internal-execution-context-4 
+Application started (Dev)
+
+2013-10-11 01:44:26,295 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-10-11 01:44:50,484 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
+2013-10-11 01:46:27,131 - [INFO] - from play in play-internal-execution-context-3 
+Application started (Dev)
+
+2013-10-11 01:46:28,975 - [INFO] - from play in play-internal-execution-context-4 
 Application started (Dev)
 

@@ -10,15 +10,20 @@ public class ServerResponse {
 
 	private String x;
 	private String y;
+	
+	private ResultType resultType; 
 
 	public ServerResponse(ServerResponseType type, String username,
-			String previous_x, String previous_y, String x, String y) {
+			String previous_x, String previous_y, String x, String y,
+			ResultType resultType) {
+		super();
 		this.type = type;
 		this.username = username;
 		this.previous_x = previous_x;
 		this.previous_y = previous_y;
 		this.x = x;
 		this.y = y;
+		this.resultType = resultType;
 	}
 	//GETTERS AND SETTERS
 	public ServerResponseType getType() {
@@ -45,20 +50,22 @@ public class ServerResponse {
 	public void setY(String y) {
 		this.y = y;
 	}
-
 	public String getPrevious_x() {
 		return previous_x;
 	}
-
 	public void setPrevious_x(String previous_x) {
 		this.previous_x = previous_x;
 	}
-
 	public String getPrevious_y() {
 		return previous_y;
 	}
-
 	public void setPrevious_y(String previous_y) {
 		this.previous_y = previous_y;
+	}
+	public ResultType getResultType() {
+		return resultType;
+	}
+	public void setResultType(ResultType resultType) {
+		this.resultType = resultType;
 	}
 }
